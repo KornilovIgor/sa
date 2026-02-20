@@ -1,8 +1,8 @@
 @startuml client_server_sequence
 skinparam Style strictuml
-' skinparam sequenceMessageAlign center
+skinparam sequenceMessageAlign center
 
-title Примитивная хема работы клиент-серверного взаимодействия
+title Примитивная схема работы клиент-серверного взаимодействия
 
 actor "Пользователь" as User #LightYellow
 participant "Браузер" as Browser #LightBlue
