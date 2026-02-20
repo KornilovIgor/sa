@@ -1,0 +1,32 @@
+@startuml client_server_sequence
+skinparam Style strictuml
+' skinparam sequenceMessageAlign center
+
+title Примитивная хема работы клиент-серверного взаимодействия
+
+actor "Пользователь" as User #LightYellow
+participant "Браузер" as Browser #LightBlue
+participant "Сервер" as Server #LightCyan
+database "База данных" as DB #LightGreen
+
+== Начало работы ==
+User -> Browser: Открывает сайт
+activate Browser
+
+== Запрос данных ==
+Browser -> Server: Запрашивает страницу (HTTP GET)
+activate Server
+
+Server -> DB: "Найди информацию в таблице"
+activate DB
+DB --> Server: Отдает данные
+deactivate DB
+
+== Ответ системы ==
+Server --> Browser: Отправляет готовый HTML-код
+deactivate Server
+
+Browser --> User: Показывает страницу
+deactivate Browser
+
+@enduml
